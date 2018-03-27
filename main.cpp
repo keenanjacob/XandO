@@ -59,7 +59,8 @@ int main()
                         {
                                 //1-C-1.  turn should be assigned the value 'X'
                                 turn=X;
-                        }    
+                        } 
+                 }       
                         cout<<"\nBOARD\n-----\n";
                         //TODO: Print the current board
                         //Outline
@@ -72,7 +73,7 @@ int main()
                                 }
                                 cout<<endl;
                         }
-                 }       
+                        
                         //1-A. Traverse through each column in row r, calling the current column c
                         //1-A-1.  Display the value of the board at location of r and c
                         //1-A-2. Display a space
