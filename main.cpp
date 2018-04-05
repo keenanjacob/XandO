@@ -22,6 +22,8 @@ int main()
         int row;
         int column;
         bool playing = true; //Continue playing by default
+        char winner= ' ';
+
 
         do
         {
@@ -43,6 +45,7 @@ int main()
                 //TODO: Place the piece and swap turns
                 //Outline
                 //1. When neither of the (above) if nor else if statements are true, then...
+
                 else
                 {
                         //1-A.  Assign the board location of row and column to the value of turn
@@ -73,13 +76,59 @@ int main()
                                 }
                                 cout<<endl;
                         }
-                        
+                 if ( ( (board[0][0] == board[0][1] && board[0][0] == board[0][2]) || (board[0][0] == board[1][1] && board[0][0] == board[2][2]) || (board[0][0] == board[1][0] && board[0][0] == board[2][0]) ) && board[0][0]!=' ' )
+                 {
+                    if (board[0][0]=='X')
+                    {
+                        winner= 'X';
+                       
+                    }
+                    else
+                    {
+                        winner='O';
+                    }
+                    playing=false;
+                    
+                 }
+
+                 else if ( ( (board[2][2] == board[2][1] && board[2][2] == board[2][0]) || (board[2][2] == board[1][2] && board[2][2] == board[0][2]) ) && board[2][2]!=' ' )
+                 {
+                    if (board[2][2]=='X')
+                    {
+                        winner='X';
+                    }
+                    else
+                    {
+                        winner='O';
+                    }
+                    playing=false;
+                 }
+
+                 else if ( ( (board[1][1] == board[0][1] && board[1][1] == board[2][1]) || (board[1][1] == board[1][0] && board[1][1] == board[1][2]) || (board[1][1] == board[0][2] && board[1][1] == board[2][0]) ) && board[1][1]!=' ' )
+                 {
+                    if (board[1][1]== 'X')
+                    {
+                        winner='X';
+                    }
+                    else
+                    {
+                        winner='O';
+                    }
+                    playing=false;
+                 }
+
+
                         //1-A. Traverse through each column in row r, calling the current column c
                         //1-A-1.  Display the value of the board at location of r and c
                         //1-A-2. Display a space
                         //1-B. Display an newline to move to the next row of the board
 
                 }while( playing );
+                
+                if(winner=='X' || winner=='O')
+                {
+                    cout<< "Winner is "<<winner<<endl;
+                }
 
                 cout<<"Goodbye!\n";
 
